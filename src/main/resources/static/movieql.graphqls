@@ -1,0 +1,29 @@
+scalar Date
+
+schema {
+
+   query: Query
+
+}
+
+type Movie{
+	ID: ID!,
+	titulo: String!,
+	presupuesto: Int!,
+	duracion: Float!,
+	lenguaje: String!
+}
+
+type Query{
+	movies: [Movie]
+	findByTitulo(titulo: String): [Movie]
+	findByAnno(anno: Int): [Movie]
+}
+
+type Mutation{
+	createMovie(titulo: String!, presupuesto: Int!, duracion: Float!, lenguaje: String!):Movie
+	
+	updateMovie(ID: ID!, titulo: String!, presupuesto: Int!, duracion: Float!, lenguaje: String!):Movie
+	
+	deleteMovie(ID: ID!): Boolean
+}
