@@ -11,7 +11,8 @@ type Movie{
 	titulo: String!,
 	presupuesto: Int!,
 	duracion: Float!,
-	lenguaje: String!
+	lenguaje: String!,
+	fechaLanzamiento: String
 }
 
 type Query{
@@ -21,9 +22,9 @@ type Query{
 }
 
 type Mutation{
-	createMovie(titulo: String!, presupuesto: Int!, duracion: Float!, lenguaje: String!):Movie
+	createMovie(titulo: String!, presupuesto: Int!, duracion: Float!, lenguaje: String!, fechaLanzamiento: String):Movie
 	
-	updateMovie(ID: ID!, titulo: String!, presupuesto: Int!, duracion: Float!, lenguaje: String!):Movie
+	updateMovie(ID: ID!, titulo: String!, presupuesto: Int!, duracion: Float!, lenguaje: String!, fechaLanzamiento: String):Movie
 	
 	deleteMovie(ID: ID!): Boolean
 }
